@@ -1,0 +1,15 @@
+// UTILITIES
+.container{
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.w-100{
+  width: 100%;
+}
+.btn{
+  color: $primary-color;
+  border-color: $primary-color;
+  border-radius: 5px;
+  padding: 5px;
+}
