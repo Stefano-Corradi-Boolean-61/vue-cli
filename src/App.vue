@@ -3,7 +3,7 @@
 
     <HeaderComponent />
 
-    <MainComponent />
+    <MainComponent :utente="user.name" :saluto="mioSaluto" />
 
     <FooterComponent />
 
@@ -19,6 +19,17 @@ import MainComponent from "./components/MainComponent.vue";
 
 export default {
     name: "App",
+    data(){
+      return{
+        mioSaluto: 'Ciao ciao',
+        mioUtente: 'Giuseppe Verdi',
+        user:{
+          name:'Ugo',
+          lastname:"De Ughi",
+          age: 30
+        }
+      }
+    },
     components: { 
       HeaderComponent, 
       FooterComponent, 

@@ -19,7 +19,11 @@
           <a href="#">link</a>
         </li>
         <li>
-          <ButtonComponent />
+          <!--ButtonComponent rimane in ascolto dei 2 $emit e scatena le funzioni -->
+          <ButtonComponent 
+            @bottoneCliccato="ricevoIlBottoneCliccato"
+            @passaggioUtente="ricevoIlPassaggioUtente"
+          />
         </li>
       </ul>
     </nav>
@@ -30,7 +34,23 @@
 import ButtonComponent from "./ButtonComponent.vue";
 export default {
     name: "HeaderComponent",
-    components: { ButtonComponent }
+    components: { ButtonComponent },
+    data(){
+      return{
+        mioUtente: {}
+      }
+    },
+    methods:{
+      ricevoIlBottoneCliccato(testoCheMiVienePassatoDaEmit){
+        // il parametro arriva dll'$emit implicitamente
+        console.log(testoCheMiVienePassatoDaEmit);
+      },
+      ricevoIlPassaggioUtente(user){
+        // il parametro arriva dll'$emit implicitamente
+        this.mioUtente = user;
+        console.log(this.mioUtente);
+      }
+    }
 }
 </script>
 
